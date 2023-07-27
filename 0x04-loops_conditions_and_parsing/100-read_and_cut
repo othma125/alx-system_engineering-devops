@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying the content of current file
+names=$(cat /etc/passwd)
+for name in $names
+do
+    echo "$name" | cut -d: -f 1,3,6
+done
