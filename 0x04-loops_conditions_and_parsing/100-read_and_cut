@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-# This script is displaying the content of current file
-names=$(cat /etc/passwd)
-for name in $names
+# This script is displaying the content of current folder
+while read -r line
 do
-    echo "$name" | cut -d: -f 1,3,6
-done
+    echo "$line" | cut -d: -f 1,3,6
+done < "/etc/passwd"
