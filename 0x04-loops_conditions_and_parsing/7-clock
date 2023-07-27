@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 # This script displays 'Best School' 10 times using while loop
-min=0
 hour=0
 while [ $hour -le 12 ]
 do
-    if [ $((min % 60)) -eq 0 ] || [ $min -eq 0 ]
-    then
-	echo Hour: $hour
-	hour=$((hour + 1))
-	min=0
-    else
+    echo Hour: $hour
+    hour=$((hour + 1))
+    min=1
+    while [ $min -le 59 ]
+    do
 	echo $min
-    fi
-    min=$((min + 1))
+	min=$((min + 1))
+    done
 done
