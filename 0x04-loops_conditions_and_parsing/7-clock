@@ -2,7 +2,7 @@
 # This script displays 'Best School' 10 times using while loop
 min=0
 hour=0
-while [ $hour -le 11 ]
+while [ $hour -le 12 ]
 do
     if [ $((min % 60)) -eq 0 ] || [ $min -eq 0 ]
     then
