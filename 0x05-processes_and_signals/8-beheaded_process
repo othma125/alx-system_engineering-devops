@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# infinit loop killer
+pkill -f -SIGKILL 7-highlander
