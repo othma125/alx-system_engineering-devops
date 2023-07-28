@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Returns list of running processes
-ps -a uf
+ps -faux | grep bash
 # shellcheck disable=SC2009
