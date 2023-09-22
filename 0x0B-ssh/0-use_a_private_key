@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+# Server SSH address
+server_address="54.82.15.128"
+
+# SSH private key file
+private_key="~/.ssh/school"
+
+# SSH user
+ssh_user="ubuntu"
+
+# SSH command with single-character flags
+ssh -i "$private_key" "$ssh_user@$server_address"
