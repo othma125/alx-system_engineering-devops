@@ -4,7 +4,7 @@
 server_address="54.82.15.128"
 
 # SSH private key file
-private_key="~/.ssh/school"
+private_key="$HOME/.ssh/school"
 
 # SSH user
 ssh_user="ubuntu"
