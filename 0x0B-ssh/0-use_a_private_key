@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 # Server SSH address
-server_address="100.26.11.180"
+server_address="54.146.65.131"
 
 # SSH private key file
 private_key="$HOME/.ssh/school"
