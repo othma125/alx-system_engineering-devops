@@ -5,10 +5,11 @@ mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Hello World!" > /etc/nginx/html/index.html
 echo "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.htm;
-}
-" > /etc/nginx/sites-available/default
+    listen 80;
+    server_name localhost;
+
+    location / {
+        echo 'Hello World!';
+    }
+}" > /etc/nginx/sites-available/default
 sudo nginx -s reload
