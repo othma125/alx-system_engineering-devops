@@ -4,7 +4,7 @@ sudo apt-get -y update
 sudo apt-get install -y nginx
 sudo service nginx start
 echo "Hello World!" > /etc/nginx/html/index.html
-sudo echo "server {
+echo "server {
     listen 80;
     server_name localhost;
 
