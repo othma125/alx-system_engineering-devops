@@ -2,7 +2,7 @@
 #comment
 sudo apt-get -y update
 sudo apt-get install -y nginx
-sudo nginx start
+sudo service nginx start
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Hello World!" > /etc/nginx/html/index.html
@@ -14,4 +14,4 @@ echo "server {
         echo 'Hello World!';
     }
 }" > /etc/nginx/sites-available/default
-sudo nginx restart
+sudo service nginx restart
