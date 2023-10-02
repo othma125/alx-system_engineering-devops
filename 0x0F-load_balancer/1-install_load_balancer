@@ -7,11 +7,11 @@ apt-get update
 apt-get install -y haproxy=1.8.\*
 
 
-sudo echo -e "ENABLED=1" >> /etc/default/haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 mv /etc/haproxy/haproxy.cfg{,.original}
 touch /etc/haproxy/haproxy.cfg
 
-sudo echo -e "global
+echo "global
     log 127.0.0.1 local0 notice
     maxconn 2000
     user haproxy
@@ -38,6 +38,6 @@ listen hbnb
     option forwardfor
     server 395178-web-01 54.146.65.131:80 check
     server 395178-web-02 18.208.120.199:80 check
-" >> /etc/haproxy/haproxy.cfg
+" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 service haproxy start
