@@ -5,7 +5,7 @@ ERRORFILE="/usr/share/nginx/html/404error.html"
 
 REDIRECT="\n\tlocation /redirect_me {\n\t\treturn 301 https://youtu.be/dQw4w9WgXcQ;\n\t}\n"
 ERRORREDIRECT="\n\terror_page 404 /404error.html;\n\tlocation = /404error.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
-CUSTOMHEADER='\n\tadd_header X-Served-By $hostname;\n'
+CUSTOMHEADER="\n\tadd_header X-Served-By $hostname;\n"
 
 STRING="Hello World!"
 FOUR="Ceci n'est pas une page"
