@@ -1,4 +1,6 @@
+#!/usr/bin/env bash
 sudo apt-get install ufw
+sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
 sudo ufw status
 sudo ufw enable -y
 sudo ufw default deny incoming -y
