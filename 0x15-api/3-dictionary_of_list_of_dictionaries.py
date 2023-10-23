@@ -3,7 +3,6 @@
 
 from json import dump
 from requests import get
-from sys import argv
 
 if __name__ == "__main__":
     users_url = "https://jsonplaceholder.typicode.com/users"
