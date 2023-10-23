@@ -3,8 +3,8 @@
 Uses the JSON placeholder api to query data about an employee
 """
 
-from requests import get
 from sys import argv
+from requests import get
 
 # from pprint import pprint
 
