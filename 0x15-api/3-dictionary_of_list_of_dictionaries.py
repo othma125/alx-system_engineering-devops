@@ -12,7 +12,8 @@ if __name__ == "__main__":
         todo_list = []
         pep_fix = "https://jsonplaceholder.typicode.com"
         todos_url = pep_fix + f"/user/{user.get('id')}/todos"
-        name_url = f"https://jsonplaceholder.typicode.com/users/{user.get('id')}"
+        name_url = "https://jsonplaceholder.typicode.com/users/"
+        name_url += f"{user.get('id')}"
         todo_result = get(todos_url).json()
         name_result = get(name_url).json()
         for todo in todo_result:
