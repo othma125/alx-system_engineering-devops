@@ -13,12 +13,11 @@ if __name__ == "__main__":
     name_result = requests.get(name_url).json()
     todo_list = []
     for todo in todo_result:
-        if todo.get("completed"):
-            my_dict = {"user_ID": sys.argv[1],
-                       "username": name_result.get("username"),
-                       "completed": todo.get('completed'),
-                       "task": todo.get("title")}
-            todo_list.append(my_dict)
+        my_dict = {"user_ID": sys.argv[1],
+                   "username": name_result.get("username"),
+                   "completed": todo.get('completed'),
+                   "task": todo.get("title")}
+        todo_list.append(my_dict)
     with open(f"{sys.argv[1]}.csv", 'w', newline='') as f:
         header = ["user_ID", "username", "completed", "task"]
         writer = DictWriter(f, fieldnames=header, quoting=QUOTE_ALL)
