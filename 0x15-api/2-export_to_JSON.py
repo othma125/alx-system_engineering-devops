@@ -14,10 +14,10 @@ if __name__ == "__main__":
     name_result = requests.get(name_url).json()
     todo_list = []
     for todo in todo_result:
-        my_dict = {"user_ID": sys.argv[1],
-                   "username": name_result.get("username"),
-                   "completed": todo.get('completed'),
-                   "task": todo.get("title")}
+        if int(sys.argv[1]) == todo.get("userId"):
+            my_dict = {"username": name_result.get("username"),
+                       "completed": todo.get("completed"),
+                       "task": todo.get("title")}
         todo_list.append(my_dict)
     with open(f"{sys.argv[1]}.json", 'w') as f:
         dump({sys.argv[1]: todo_list}, f)
