@@ -1,0 +1,26 @@
+Postmortem Report: Service Outage Due to jQuery Issue on November 6, 2023
+Issue Summary:
+Duration: The outage occurred on November 6, 2023, from 10:00 AM to 10:45 AM (UTC).
+Impact: The service outage affected the core functionality of our web application. Users were unable to select amenities, states, and cities effectively, leading to a frustrating experience. This issue affected approximately 60% of our users.
+Root Cause: The root cause of the outage was an issue with the jQuery code responsible for handling the selection of amenities, states, and cities.
+Timeline:
+Detection Time: The issue was detected at 10:00 AM (UTC) when a user reported that amenities were not being added to the div, and selected places were not displayed as expected.
+Detection Method: A customer complaint triggered the initial detection, followed by internal validation from our QA team.
+Actions Taken: The engineering team began investigating the issue immediately, starting with a review of the jQuery code. The assumption was that a recent code change may have caused the problem.
+Misleading Paths: Initially, the investigation focused on the backend systems and server-side logic, assuming the issue might be related to data retrieval. This consumed valuable time without identifying the root cause.
+Escalation: The incident was escalated to the web development team for deeper analysis and debugging.
+Resolution: The issue was resolved at 10:45 AM (UTC) by identifying a bug in the jQuery code and making the necessary corrections.
+Root Cause and Resolution:
+Root Cause: The root cause of the outage was a coding issue within the jQuery script used for handling the selection of amenities, states, and cities. The script was not properly binding checkboxes and handling their states, leading to incorrect behavior.
+Resolution: The issue was fixed by identifying the specific code block responsible for the bug and making necessary corrections. The revised jQuery code properly handled the selection and display of amenities, states, and cities.
+Corrective and Preventative Measures:
+Improvements/Fixes:
+Implement stricter code review and testing processes for JavaScript and jQuery code.
+Enhance version control and issue tracking for front-end code to facilitate easier debugging.
+Provide comprehensive training to developers regarding jQuery best practices.
+Tasks:
+Conduct a thorough review of all jQuery scripts to identify potential issues and improve code quality.
+Introduce automated testing for front-end components to catch bugs early in the development process.
+Establish a knowledge sharing program for the development team to improve their understanding of best practices and coding standards.
+This incident underscored the importance of rigorous code review and testing for front-end components, and it highlighted the need for continuous learning and improvement among our development team. The corrective measures and tasks outlined above will help prevent similar issues in the future and enhance the reliability of our web application.
+We apologize for any inconvenience this outage may have caused our users and remain committed to delivering a seamless user experience. Thank you for your understanding and continued support.
