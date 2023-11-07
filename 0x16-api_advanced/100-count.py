@@ -2,11 +2,10 @@
 """Write a recursive function that queries the Reddit API, parses the
 title of all hot articles, and prints a sorted count of given keywords"""
 import requests
-from pprint import pprint
 
 
 def count_words(subreddit, word_list, after="", word_dict={}):
-    """Returns the top ten hot posts for a given subreddit"""
+    """Returns the top ten hot words for a given subreddit"""
     if after == "":
         word_list = [word.lower() for word in word_list]
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?after={after}"
@@ -25,9 +24,6 @@ def count_words(subreddit, word_list, after="", word_dict={}):
                         word_dict[word] = 1
         after = data.get("after")
         if after:
-            return count_words(subreddit, word_list, after, word_dict)
+            count_words(subreddit, word_list, after, word_dict)
         for word in word_dict:
             print(f"{word}: {word_dict[word]}")
-        return word_dict
-    else:
-        return None
