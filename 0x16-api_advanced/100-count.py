@@ -26,6 +26,8 @@ def count_words(subreddit, word_list, after="", word_dict={}):
         after = data.get("after")
         if after:
             return count_words(subreddit, word_list, after, word_dict)
+        for word in word_dict:
+            print(f"{word}: {word_dict[word]}")
         return word_dict
     else:
         return None
