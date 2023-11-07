@@ -7,7 +7,12 @@ from requests import get
 def count_words(subreddit, word_list, after="", word_dict={}):
     """Returns the top ten hot words for a given subreddit"""
     if after == "":
-        word_list = [word.lower() for word in word_list]
+        new_word_list = []
+        for word in word_list:
+            lower = word.lower()
+            if lower not in new_word_list:
+                new_word_list.append(word.lower())
+        word_list = new_word_list
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?after={after}"
     headers = {"User-Agent": "My-User-Agent"}
     response = get(url, headers=headers, allow_redirects=False)
